@@ -1,0 +1,56 @@
+# Project Specific#
+###################
+package.egg-info/
+dist/
+build/
+datasets/*
+results/*
+trained_models/*
+# exception to the rule
+!datasets/.gitkeep
+!results/.gitkeep
+!trained_models/.gitkeep
+!results/proposed_method_results.csv
+!results/results_230410_165455.csv
+.ipynb_checkpoints 
+__pycache__
+.vscode
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+#*.pkl
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
