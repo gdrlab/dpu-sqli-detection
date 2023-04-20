@@ -3,7 +3,7 @@
 package.egg-info/
 dist/
 build/
-datasets/*
+#datasets/*
 results/*
 trained_models/*
 # exception to the rule
