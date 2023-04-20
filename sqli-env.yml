@@ -1,0 +1,16 @@
+name: sqli-env
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python
+  - nltk
+  - scikit-learn
+  - pandas
+  - xgboost
+  - jupyter
+  - scipy
+  - numpy
+  - seaborn
+  - scienceplots 
+  - mscorefonts
