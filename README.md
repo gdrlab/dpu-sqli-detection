@@ -17,10 +17,10 @@ The first part (Classical ML methods) can run on virtual Python environment on W
 - Download and install the [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge) environment.
 - Open Miniforge Prompt and change current directory to the project folder. 
 - (Optional) If you have GPU and want to use it update the yml file to contain "tensorflow-gpu".(this might not work. Not tested)
-- Run the following command in the folder, where **rafi-sqli.yml** file resides. This will create a new Python environment with the required packages:
-    -  ``` mamba env create -f rafi-sqli.yml ```
+- Run the following command in the folder, where **sqli-env.yml** file resides. This will create a new Python environment with the required packages:
+    -  ``` mamba env create -f sqli-env.yml ```
 - Activate the environment
-    - ``` mamba activate rafi-sqli ```
+    - ``` mamba activate sqli-env.yml ```
 - Install the following packages:
     - ``` pip install -q -U "tensorflow-text==2.8.*" ```
     - ``` pip install -q tf-models-official==2.7.0 ```
@@ -32,7 +32,7 @@ The first part (Classical ML methods) can run on virtual Python environment on W
 - Modify config.ini file and run 'main.ipynb'
 
 ### (Optional) Running only the classical ML based methods
-- Activate rafi-sqli environment in the Miniforge prompt and run the test:
+- Activate sqli-env.yml environment in the Miniforge prompt and run the test:
     - ``` python run_classical_MLs.py -o <output file path>```
 
 

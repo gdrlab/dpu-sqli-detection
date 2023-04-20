@@ -9,7 +9,7 @@ import numpy as np
 
 from templates import FeatureExtractor, logger
 from classical_models import Classical_Model
-from ensemble_models import Ensemble_1, Ensemble_2, Ensemble_4
+#from ensemble_models import Ensemble_1, Ensemble_2, Ensemble_4
 
 def evaluate(y_test, y_pred, notes):
   accuracy = accuracy_score(y_test, y_pred)
@@ -99,44 +99,7 @@ class TestManager:
         
 
 
-  def __run_ensemble_tests(self, ensemble_models):
-    for ensemble_model in ensemble_models:
-      model = None
-      feature_extractor = None
-      if ensemble_model == 'ensemble_1':
-        model = Ensemble_1(self.data_manager , self.models_dict, self.feature_extractors_dict)
-        model.feature_method = 'tf-idf, tf-idf_ngram, bag_of_characters'
-        feature_extractor = FeatureExtractor('ensemble_1') # dummy feature ext. just for keeping latency notes.
-      elif ensemble_model == 'ensemble_2':
-        model = Ensemble_2(self.data_manager , self.models_dict, self.feature_extractors_dict)
-        model.feature_method = 'tf-idf, tf-idf_ngram, bag_of_characters'
-        feature_extractor = FeatureExtractor('ensemble_2') # dummy feature ext. just for keeping latency notes.
-      elif ensemble_model == 'ensemble_4':
-        model = Ensemble_4(self.data_manager , self.models_dict, self.feature_extractors_dict)
-        model.feature_method = 'tf-idf, tf-idf_ngram, bag_of_characters'
-        feature_extractor = FeatureExtractor('ensemble_4') # dummy feature ext. just for keeping latency notes.
-      elif ensemble_model == '':
-        print('No ensemble method selected in config.ini file.')
-        continue
-      else:
-        raise ValueError(f"Unknown ensemble model: {ensemble_model}")
-      
-      
-      # self.data_manager.x_train, self.data_manager.x_test
-      model.fit(self.data_manager.x_train, self.data_manager.y_train)
-      y_pred = model.predict(self.data_manager.x_test)
-      feature_extractor.notes = {
-          'extraction_time': model.feature_latency,
-          'feature_size': model.feature_size,
-      }
-      self.model = model #this will be the saved pickle file
-      self.__evaluations(self.data_manager.y_test, y_pred, model, feature_extractor)
-      # Save the trained model
-      if int(self.config['settings']['save_models']) != 0:
-        timestamp = int(time.time())
-        file_name = (Path(self.config['models']['dir']) 
-                    / f"{model.model_name}_{feature_extractor.method}_{timestamp}.pkl")
-        model.save_model(file_name) #doesn't work
+  
 
   def __adaptive(self, selected_feature_method, selected_model_name, threshold=0.5):
    
@@ -295,12 +258,12 @@ class TestManager:
     return y_test, y_pred_prob
 
 
-  def run_tests(self, feature_methods, classic_models, ensemble_models):
+  def run_tests(self, feature_methods, classic_models):
     self.__features_models_cartesian_tests(feature_methods, classic_models)
-    self.__run_ensemble_tests(ensemble_models)
+    #self.__run_ensemble_tests(ensemble_models)
     #self.__adaptive('tf-idf_ngram', 'xgboost', threshold=0.5)
-    adaptive_model = self.__adaptive('tf-idf_ngram', 'xgboost', threshold=0.3)
-    file_name = self.__save_pred_prob(adaptive_model,dir=Path(self.config['results']['dir']))
+    #adaptive_model = self.__adaptive('tf-idf_ngram', 'xgboost', threshold=0.3)
+    #file_name = self.__save_pred_prob(adaptive_model,dir=Path(self.config['results']['dir']))
     # TODO: save pred_prob and open it in display results ipython file.
     # TODO: plot ROC for 0.0001 values as well(may be logarithmic in x axis?)
     # TODO: Make a function to calculate the estimated speed vs Recall.
