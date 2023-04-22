@@ -2,6 +2,7 @@ import configparser
 from templates import DataManager, logger
 from experiments import TestManager
 import sys, getopt
+from tqdm import tqdm
 
 
 def main(argv):
@@ -24,10 +25,13 @@ def main(argv):
   #ensemble_models = [model.strip() for model in config.get('models', 'ensemble_models').split(',')]
 
   seed_idx = 0
-  while (data_manager.split_data(seed_idx=seed_idx)): #while there are more seeds
-    print(f'Running the tests for seed: {data_manager.seed}')
-    test_manager.run_tests(feature_methods, classic_models)
-    seed_idx += 1
+  total_seeds = len(config.get('data_manager', 'seed').split(','))
+  with tqdm(total=total_seeds, desc='Seeds') as pbar:
+    while (data_manager.split_data(seed_idx=seed_idx)): #while there are more seeds  
+      logger.info(f'Running the tests for seed: #{seed_idx} ({data_manager.seed}) of {total_seeds} seeds')
+      test_manager.run_tests(feature_methods, classic_models)
+      seed_idx += 1
+      pbar.update(1)
 
   return test_manager.output_file_name
   

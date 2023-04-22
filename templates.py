@@ -107,6 +107,7 @@ class Model:
   def __init__(self, model_name, *args, **kwargs):
     self.model_name = model_name
     self.model = None
+    self.vectorizer = None
     self.feature_method = ""
     self.notes = {}
     self._create_model(*args, **kwargs)
@@ -157,12 +158,12 @@ class Model:
 
   def save_model(self, file_name):
     with open(file_name, 'wb') as f:
-      pickle.dump(self.model, f)
+      pickle.dump((self.model, self.vectorizer), f)
     logger.info(f"Model saved as {file_name}")
 
   def load_model(self, file_name, dir):
     with open(Path(dir) / file_name, 'rb') as f:
-      self.model = pickle.load(f)
+      self.model, self.vectorizer = pickle.load(f)
     logger.info(f"Model loaded from {file_name}")
 
 
