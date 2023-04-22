@@ -99,19 +99,30 @@ class TestManager:
         self.models_dict[model.model_name].update({feature_extractor.method: model})
         
         # Save the trained model
+        # 
+        
         if int(self.config['settings']['save_models']) != 0:
-          timestamp = int(time.time())
-          file_name = (Path(self.config['models']['dir']) 
-                      / f"{model.model_name}_{feature_extractor.method}_{timestamp}.pkl")
-          model.save_model(file_name)
+          # save model only if it was not saved before:
+          if (model.model_name, feature_extractor.method) not in [(name,fe) for name, fe, _ in self.all_params]:
+            timestamp = int(time.time())
+            file_name = (Path(self.config['models']['dir']) 
+                        / f"{model.model_name}_{feature_extractor.method}_{timestamp}.pkl")
+            model.save_model(file_name)
 
         y_pred = model.predict(feature_extractor.features['test'])
         self.__evaluations(self.data_manager.y_test, y_pred, model, feature_extractor)
-        self.__append_model_params_file(model_name=model_name, model_params=model.model.get_params())
+        params = model.model.get_params()
+        #Problem: XGboost as a parameter of OneVsRest, cannot be serialized with json.dump
+        #dirty fix: just save the name, not the object
+        if 'estimator' in params:
+          params['estimator'] = type(params['estimator']).__name__
         
+        # save parameters only if it was not saved before:
+        if (model.model_name, feature_extractor.method) not in [(name,fe) for name, fe, _ in self.all_params]:
+          self.__append_model_params_file(model_name=model_name, fe=feature_extractor.method, model_params=params)
           
-  def __append_model_params_file(self, model_name, model_params):
-    self.all_params.append((model_name, model_params))
+  def __append_model_params_file(self, model_name, fe, model_params):
+    self.all_params.append((model_name, fe, model_params))
   
   def __save_all_params_file(self, dir):
     if self.output_file_name == '':
@@ -124,7 +135,7 @@ class TestManager:
     self.output_file_name = file_name
     param_file_name = file_name.parent / file_name.with_suffix('.json').name.replace('results', 'params')
     
-    # Save the data to a file
+    # Save the parameters to a file
     with open(param_file_name, 'w') as f:
       json.dump(self.all_params, f)
     logger.info(f"Params saved to {param_file_name}")

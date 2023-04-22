@@ -38,7 +38,7 @@ class Classical_Model(Model):
     elif self.model_name == 'RandomForestClassifier':
       self.model = RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1, *args, **kwargs)
     elif self.model_name == 'MLPClassifier':
-      self.model = MLPClassifier(alpha=1, max_iter=1000, *args, **kwargs)
+      self.model = MLPClassifier(hidden_layer_sizes=(20,), alpha=1, max_iter=1000, *args, **kwargs)
     elif self.model_name == 'AdaBoostClassifier':
       self.model = AdaBoostClassifier( *args, **kwargs)
     elif self.model_name == 'BaggingClassifier':
