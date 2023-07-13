@@ -4,9 +4,9 @@ This repository provides the codes and the dataset to regenerate the results giv
 
 
 ## Requirements  
-
-- (recommended) Google Colab account, or any other Jupyter Notebook.
-- (optional) If you want to run on local machines, use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge). Mamba package search is significantly faster than Anaconda (or [Anaconda](https://www.anaconda.com/products/distribution) environment)
+The code can both run machines with or without DPU.
+- (optional) Jupyter Notebook, or Google Colab account if you just want to see how the code runs, or view the results (utils/Demonstrate_test_results.ipynb).
+- (recommended) If you want to run on local machines with DPU on it, use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge). Mamba package search is significantly faster than Anaconda (or [Anaconda](https://www.anaconda.com/products/distribution) environment)
 ## Installation and Setup
 ### For Google Colab setup
 - Upload all GitHub files into your Google Drive (e.g. '/content/drive/MyDrive/Akademik/Research and Projects/Kasim/AI Security Intelligence/Codes/20230311_sqli_colab')
