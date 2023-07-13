@@ -5,7 +5,7 @@ This repository provides the codes and the dataset to regenerate the results giv
 
 ## Requirements  
 
-- (recommended) Google Colab account, or any other Jupyter Notebook with GPU support.
+- (recommended) Google Colab account, or any other Jupyter Notebook.
 - (optional) If you want to run on local machines, use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge). Mamba package search is significantly faster than Anaconda (or [Anaconda](https://www.anaconda.com/products/distribution) environment)
 ## Installation and Setup
 ### For Google Colab setup
