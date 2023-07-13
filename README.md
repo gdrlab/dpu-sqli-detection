@@ -1,3 +1,7 @@
+<a target="_blank" href="https://colab.research.google.com/github/gdrlab/dpu-sqli-detection/blob/main/main.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 # SQLi Detection on DPU
 This repository provides the codes and the dataset to regenerate the results given in the paper: K. Tasdemir et al., "Detecting SQL Injection Through Classical Machine Learning on DPU," _2023 IEEE 36th International System-on-Chip Conference (SOCC)_, Santa Clara, CA, USA, 2023, pp.(TBA) 
 ![single_nlp_f1_vs_time](https://github.com/gdrlab/dpu-sqli-detection/assets/6195512/080c4166-1da8-4d0e-ab08-57a557e784ab)
