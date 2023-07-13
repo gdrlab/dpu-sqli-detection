@@ -1,4 +1,3 @@
-# (THIS README FILE IS NOT UPTO DATE)
 # SQLi Detection on DPU
 
 ## Requirements  
@@ -7,24 +6,19 @@
 - (optional) If you want to run on local machines, use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge). Mamba package search is significantly faster than Anaconda (or [Anaconda](https://www.anaconda.com/products/distribution) environment)
 ## Setup
 ### For Google Colab setup
-- Upload all GitHub files into your Google Drive (e.g. '/content/drive/MyDrive/Akademik/Research and Projects/Sakir Hoca Projects/AI Security Intelligence/Codes/20230331_sqli_colab')
+- Upload all GitHub files into your Google Drive (e.g. '/content/drive/MyDrive/Akademik/Research and Projects/Kasim/AI Security Intelligence/Codes/20230311_sqli_colab')
 - Update the hardcoded paths and run 'main.ipynb'
 ### (optional) For local setup 
 You can skip this part if you use Google Colab. 
 
-The first part (Classical ML methods) can run on virtual Python environment on Win, Mac or Linux.
+The Classical ML methods can run on virtual Python environment on Win, Mac or Linux.
 
 - Download and install the [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge) environment.
 - Open Miniforge Prompt and change current directory to the project folder. 
-- (Optional) If you have GPU and want to use it update the yml file to contain "tensorflow-gpu".(this might not work. Not tested)
 - Run the following command in the folder, where **sqli-env.yml** file resides. This will create a new Python environment with the required packages:
     -  ``` mamba env create -f sqli-env.yml ```
 - Activate the environment
     - ``` mamba activate sqli-env.yml ```
-- Install the following packages:
-    - ``` pip install -q -U "tensorflow-text==2.8.*" ```
-    - ``` pip install -q tf-models-official==2.7.0 ```
-    - (Note: these packages were not in conda repo. If you find it in the repo, use mamba install instead of pip)
 
 
 ## Running
@@ -66,9 +60,6 @@ The first part (Classical ML methods) can run on virtual Python environment on W
   - The results are saved to a pkl file in the main folder.
   - the results pickle files can be read and visualized using utils\Demonstrate_test_results.ipynb. This also generates the Latex tables used in the paper.
   - the visualized results have color scheme. The fonts sizes, etc. are ready for the paper.
-- Release (v0.2.0)
-    - BERT is added to the tests. See ``` package/detect_sqi_with_transformers.ipynb ```
-    - ``` utils\Demonstrate_test_results.ipynb ``` combine the results and demonstrates the experimental results.
 - Release (v0.1.0)
     - Results are saved to a Pandas dataframe. It is saved to a pickle file.
     - Results can be visualized using Utils/Data visualize . jpy notebook.
