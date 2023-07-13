@@ -36,7 +36,7 @@ The Classical ML methods can run on virtual Python environment on Win, Mac or Li
 - Use ``` main.ipynb ```.
 
 ## Folder contents
-- Main folders: (datasets, utils, trained_models, results)
+- Main folders: (datasets, trained_models, results)
   - datasets: SQLi csv file with two columns:'payload' and 'label'.
   - config.ini: choose the models to be tested and other options. Note: Ensemble models need all classical MLs to be run before.
   - results: .csv and .json file outputs of the experimental tests.
