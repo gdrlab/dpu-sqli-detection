@@ -1,4 +1,6 @@
 # SQLi Detection on DPU
+![single_nlp_f1_vs_time](https://github.com/gdrlab/dpu-sqli-detection/assets/6195512/1658420d-9e56-4fc5-b0c2-e4fe4aa651c4)
+
 
 ## Requirements  
 
