@@ -5,13 +5,10 @@ This repository provides the codes and the dataset to regenerate the results giv
 
 ## Requirements  
 Note: The code doesn't check if DPU exists. It can run on machines with or without DPU.
-- (optional, easier) Jupyter Notebook, or Google Colab account if you just want to see how the code runs, or view the results (utils/Demonstrate_test_results.ipynb).
-- (recommended) If you want to run on local machines with DPU on them, use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge). Mamba package search is significantly faster than Anaconda (or [Anaconda](https://www.anaconda.com/products/distribution) environment)
+- (optional, easier) Jupyter Notebook, or Google Colab account if you just want to see how the code runs, or view the results.
+- (option B) If you want to run on local machines with DPU on them, use [Mambaforge](https://github.com/conda-forge/miniforge#mambaforge). Mamba package search is significantly faster than Anaconda (or [Anaconda](https://www.anaconda.com/products/distribution) environment)
 ## Installation and Setup
-### For Google Colab setup
-- Upload all GitHub files into your Google Drive (e.g. '/content/drive/MyDrive/Akademik/Research and Projects/Kasim/AI Security Intelligence/Codes/20230311_sqli_colab')
-- Update the hardcoded paths and run 'main.ipynb'
-### (optional) For local setup 
+### (option B) For local setup 
 You can skip this part if you use Google Colab. 
 
 The Classical ML methods can run on virtual Python environment on Win, Mac or Linux.
@@ -26,7 +23,8 @@ The Classical ML methods can run on virtual Python environment on Win, Mac or Li
 
 ## Running
 ### Running all
-- Modify config.ini file and run 'main.ipynb'
+- Modify config.ini file
+- run 'main.ipynb' on Colab
 
 ### (Optional) Running only the classical ML based methods
 - Activate sqli-env.yml environment in the Miniforge prompt and run the test:
@@ -35,46 +33,20 @@ The Classical ML methods can run on virtual Python environment on Win, Mac or Li
 
 ## Demonstrating the experimental results
 
-- Modify ``` utils\Demonstrate_test_results.ipynb ``` to point the result file and run it.
+- Use ``` main.ipynb ```.
 
 ## Folder contents
 - Main folders: (datasets, utils, trained_models, results)
   - datasets: SQLi csv file with two columns:'payload' and 'label'.
   - config.ini: choose the models to be tested and other options. Note: Ensemble models need all classical MLs to be run before.
-  - utils   
-    - Demonstrate test results : produce all visuals and tables used in the paper.
+  - results: .csv and .json file outputs of the experimental tests.
 
 ## Troubleshot
 
 - 
 ## Release notes
-- Release (v0.5.0)
-  - Adaptive method is implemented. XGboost is being trained with 5000x positive weight, 0.05 threshold in inference.
-  - The proposed method is added to the test results (Tables and Figures)
-  - Supports multiple random seeds in config.ini file.
-- Release (v0.4.0)
-  - OOP is used to modularize the code.
-  - Most of the settings can be set from config.ini file.
-  - Classic ML and Transformers can be run with a single file (notebook)
-  - "results demonstration" file is updated
-  - results are saved into CSV file, not pkl.
-  - "saving models" does NOT work.
-- Release (0.3.0) Latex table generation
-  - The results are saved to a pkl file in the main folder.
-  - the results pickle files can be read and visualized using utils\Demonstrate_test_results.ipynb. This also generates the Latex tables used in the paper.
-  - the visualized results have color scheme. The fonts sizes, etc. are ready for the paper.
-- Release (v0.1.0)
-    - Results are saved to a Pandas dataframe. It is saved to a pickle file.
-    - Results can be visualized using Utils/Data visualize . jpy notebook.
-    - The original code required datasets with 'delimiter=three tabs'. This is no longer supported by Pandas data frame. So, It has been changed to support single tab delimited dataset. If you need to use the old code on the old datasets, you can use Release v0.0.12
-	- utils/clean-kaggle-sqli-dataset-and-split.ipynb file is created for cleaning Kaggle SQLi dataset and splitting it into train-test files.
-	- utils/convert-old-dataset-to-new-single-tab.ipynb file is created for converting old three tabs delimited dataset to single tab.
-	- utils/dataset-train-test-splitter.ipynb file is created for splitting the given dataset to train and test parts.
-	- support for running without building the package is added (nlp_hybrid.py)
-
-- Release v0.0.12
-
-    - This is the original , the first code from Rafi. It works with Python 3 (the very first one was Python 2)
+- Release (v1.0.0)
+  - Only main.ipynb is now enough for tests and demonstrations.
 
 ## TODO
 - Save the trained models. Add a method to load and run the saved models without training.
