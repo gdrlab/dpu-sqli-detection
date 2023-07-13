@@ -1,4 +1,5 @@
 # SQLi Detection on DPU
+This repository provides the codes and the dataset to regenerate the results given in the paper: K. Tasdemir et al., "Detecting SQL Injection Through Classical Machine Learning on DPU," _2023 IEEE 36th International System-on-Chip Conference (SOCC)_, Santa Clara, CA, USA, 2023, pp.(TBA) 
 ![single_nlp_f1_vs_time](https://github.com/gdrlab/dpu-sqli-detection/assets/6195512/080c4166-1da8-4d0e-ab08-57a557e784ab)
 
 
@@ -79,6 +80,7 @@ The Classical ML methods can run on virtual Python environment on Win, Mac or Li
 - Save the trained models. Add a method to load and run the saved models without training.
 
 ## Acknowledgment
-(TODO: Add the project code)
+- (TODO: Add the project code)
+- Kaggle SQLi [dataset](https://www.kaggle.com/datasets/syedsaqlainhussain/sql-injection-dataset)
 
  
