@@ -4,6 +4,7 @@
 
 # SQLi Detection on DPU
 This repository provides the codes and the dataset to regenerate the results given in the paper: K. Tasdemir, R. Khan, F. Siddiqui, S. Sezer, F. Kurugollu and A. Bolat, "An Investigation of Machine Learning Algorithms for High-bandwidth SQL Injection Detection Utilising BlueField-3 DPU Technology," 2023 IEEE 36th International System-on-Chip Conference (SOCC), Santa Clara, CA, USA, 2023, pp. 1-6, doi: 10.1109/SOCC58585.2023.10256777 
+[Link to the paper](https://ieeexplore.ieee.org/abstract/document/10256777?casa_token=vgwFFVmAXKsAAAAA:b6k-2Mi9NFGSmbO7L_tz1I1BykhM04WYLQjfFcEmwP0DzarIsDX8MCt0fKt6tFNkAaNAyrcGqQ)
 ![single_nlp_f1_vs_time](https://github.com/gdrlab/dpu-sqli-detection/assets/6195512/080c4166-1da8-4d0e-ab08-57a557e784ab)
 
 
