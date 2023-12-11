@@ -3,7 +3,7 @@
 </a>
 
 # SQLi Detection on DPU
-This repository provides the codes and the dataset to regenerate the results given in the paper: K. Tasdemir et al., "Detecting SQL Injection Through Classical Machine Learning on DPU," _2023 IEEE 36th International System-on-Chip Conference (SOCC)_, Santa Clara, CA, USA, 2023, pp.(TBA) 
+This repository provides the codes and the dataset to regenerate the results given in the paper: K. Tasdemir, R. Khan, F. Siddiqui, S. Sezer, F. Kurugollu and A. Bolat, "An Investigation of Machine Learning Algorithms for High-bandwidth SQL Injection Detection Utilising BlueField-3 DPU Technology," 2023 IEEE 36th International System-on-Chip Conference (SOCC), Santa Clara, CA, USA, 2023, pp. 1-6, doi: 10.1109/SOCC58585.2023.10256777 
 ![single_nlp_f1_vs_time](https://github.com/gdrlab/dpu-sqli-detection/assets/6195512/080c4166-1da8-4d0e-ab08-57a557e784ab)
 
 
@@ -63,6 +63,21 @@ The Classical ML methods can run on virtual Python environment on Win, Mac or Li
 
 ## How to cite this work?
 Please cite this work as follows:
+
+Bibtex:
+```
+@INPROCEEDINGS{10256777,
+  author={Tasdemir, Kasim and Khan, Rafiullah and Siddiqui, Fahad and Sezer, Sakir and Kurugollu, Fatih and Bolat, Alperen},
+  booktitle={2023 IEEE 36th International System-on-Chip Conference (SOCC)}, 
+  title={An Investigation of Machine Learning Algorithms for High-bandwidth SQL Injection Detection Utilising BlueField-3 DPU Technology}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-6},
+  doi={10.1109/SOCC58585.2023.10256777}}
+```
+
+Plain text:
 ```
 K. Tasdemir, R. Khan, F. Siddiqui, S. Sezer, F. Kurugollu and A. Bolat, "An Investigation of Machine Learning Algorithms for High-bandwidth SQL Injection Detection Utilising BlueField-3 DPU Technology," 2023 IEEE 36th International System-on-Chip Conference (SOCC), Santa Clara, CA, USA, 2023, pp. 1-6, doi: 10.1109/SOCC58585.2023.10256777.
 ```
