@@ -55,8 +55,16 @@ The Classical ML methods can run on virtual Python environment on Win, Mac or Li
 ## TODO
 - Save the trained models. Add a method to load and run the saved models without training.
 
+
 ## Acknowledgment
 - (TODO: Add the project code)
 - Kaggle SQLi [dataset](https://www.kaggle.com/datasets/syedsaqlainhussain/sql-injection-dataset)
+
+
+## How to cite this work?
+Please cite this work as follows:
+```
+K. Tasdemir, R. Khan, F. Siddiqui, S. Sezer, F. Kurugollu and A. Bolat, "An Investigation of Machine Learning Algorithms for High-bandwidth SQL Injection Detection Utilising BlueField-3 DPU Technology," 2023 IEEE 36th International System-on-Chip Conference (SOCC), Santa Clara, CA, USA, 2023, pp. 1-6, doi: 10.1109/SOCC58585.2023.10256777.
+```
 
  
